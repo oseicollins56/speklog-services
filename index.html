@@ -10,23 +10,20 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* ---- HOMEPAGE HERO ---- */
-#home { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: url('images/hero-aerial.jpg') center/cover no-repeat; }
-.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,60,80,.52) 0%, rgba(0,77,102,.36) 50%, rgba(0,60,80,.55) 100%); }
-.hero-content { position: relative; z-index: 2; text-align: center; padding: 120px 24px 80px; max-width: 860px; }
-.hero-division-tag { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 700; letter-spacing: .18em; color: rgba(255,255,255,.6); margin-bottom: 28px; text-transform: uppercase; }
-.hero-division-tag::before, .hero-division-tag::after { content: ''; display: block; width: 40px; height: 1px; background: #a0b400; opacity: .7; }
-.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 20px; }
+#home { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: url('images/hero-aerial.jpg') center/cover no-repeat; background-attachment: scroll; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,60,80,.54) 0%, rgba(0,77,102,.38) 50%, rgba(0,60,80,.58) 100%); }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px; max-width: 860px; }
+.hero-division-tag { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 700; letter-spacing: .18em; color: rgba(255,255,255,.65); margin-bottom: 24px; text-transform: uppercase; }
+.hero-division-tag::before, .hero-division-tag::after { content: ''; display: block; width: 40px; height: 1px; background: #a0b400; opacity: .8; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 6.5vw, 4.6rem); font-weight: 700; color: #fff; line-height: 1.12; margin-bottom: 18px; }
 .hero-title span { color: #a0b400; }
-.hero-tagline { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 300; color: rgba(255,255,255,.75); margin-bottom: 20px; letter-spacing: .02em; font-style: italic; }
-.hero-desc { font-size: .95rem; color: rgba(255,255,255,.6); line-height: 1.8; max-width: 680px; margin: 0 auto 40px; }
+.hero-tagline { font-size: clamp(1rem, 2.2vw, 1.35rem); font-weight: 300; color: rgba(255,255,255,.8); margin-bottom: 16px; letter-spacing: .03em; font-style: italic; }
+.hero-desc { font-size: .93rem; color: rgba(255,255,255,.62); line-height: 1.85; max-width: 640px; margin: 0 auto 38px; }
 .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; color: rgba(255,255,255,.4); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; animation: bounce 2s ease infinite; }
-.hero-scroll span { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent); }
-@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
-/* Big hero logo */
-.hero-logo { height: 220px; width: auto; margin: 0 auto 24px; display: block; filter: drop-shadow(0 4px 24px rgba(0,0,0,.5)); }
-@media(max-width:600px){ .hero-logo { height: 140px; } }
+.hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; color: rgba(255,255,255,.4); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; animation: bounce 2.2s ease infinite; }
+.hero-scroll span { width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent); }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(9px)} }
 </style>
 </head>
 <body>
@@ -75,7 +72,6 @@
 <section id="home">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <img src="images/alog-logo.png" alt="ALOG" class="hero-logo"/>
     <div class="hero-division-tag">CONSTRUCTION · INTERIOR DESIGN · REAL ESTATE</div>
     <h1 class="hero-title"><span>Build.</span> Design. Own.</h1>
     <p class="hero-tagline">Home of Quality and Unique Works</p>
