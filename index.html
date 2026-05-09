@@ -11,8 +11,8 @@
 <style>
 /* ---- HOMEPAGE HERO (kept exactly as original) ---- */
 #home { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #0d1b2a 0%, #1a3550 50%, #0d2238 100%); }
-.hero-bg::after { content: ''; position: absolute; inset: 0; background: url('images/construction/1123e2b0-00ca-4c1c-ab6b-debfa7b62878.JPG') center/cover no-repeat; opacity: .18; }
+.hero-bg { position: absolute; inset: 0; background: url('images/hero-bg.jpg') center/cover no-repeat; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,26,58,.82) 0%, rgba(13,35,71,.72) 50%, rgba(10,26,58,.88) 100%); }
 .hero-content { position: relative; z-index: 2; text-align: center; padding: 120px 24px 80px; max-width: 860px; }
 .hero-division-tag { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 700; letter-spacing: .18em; color: rgba(255,255,255,.6); margin-bottom: 28px; text-transform: uppercase; }
 .hero-division-tag::before, .hero-division-tag::after { content: ''; display: block; width: 40px; height: 1px; background: #89C541; opacity: .7; }
@@ -27,6 +27,14 @@
 </style>
 </head>
 <body>
+
+<!-- PAGE LOADER -->
+<div id="page-loader" class="page-loader">
+  <div class="loader-inner">
+    <img src="images/alog-logo.png" alt="ALOG" class="loader-logo"/>
+    <div class="loader-bar"><div class="loader-progress"></div></div>
+  </div>
+</div>
 
 <!-- NAVBAR -->
 <nav id="navbar">
@@ -213,6 +221,53 @@
     </div>
     <div style="text-align:center;margin-top:40px;" class="fade-in">
       <a href="gallery.html" class="btn btn-outline">View Full Gallery &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header-center fade-in">
+      <span class="section-tag">What Clients Say</span>
+      <h2 class="section-title">Trusted by Homeowners &amp; <span>Investors Across Ghana</span></h2>
+    </div>
+    <div class="testimonials-grid fade-in">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"ALOG built our family home from scratch in under 8 months. The quality is outstanding — our neighbours keep asking who built it. We couldn't be happier."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">KA</div>
+          <div>
+            <strong>Kwame Asante</strong>
+            <span>Residential Client · East Legon, Accra</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The interior design team transformed our office space completely. It's professional, modern, and our staff are more productive than ever. Highly recommended."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AF</div>
+          <div>
+            <strong>Abena Frimpong</strong>
+            <span>Commercial Client · Airport City, Accra</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Found my dream property through ALOG Real Estate in just two weeks. Their team was transparent, professional, and made the whole buying process stress-free."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">EO</div>
+          <div>
+            <strong>Emmanuel Osei</strong>
+            <span>Property Buyer · Tema</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -2,6 +2,16 @@
    script.js — ALOG Shared JavaScript
    ============================================================ */
 
+// ----- PAGE LOADER -----
+const loader = document.getElementById('page-loader');
+if (loader) {
+  window.addEventListener('load', () => {
+    setTimeout(() => loader.classList.add('hidden'), 400);
+  });
+  // Fallback: hide after 2.5s no matter what
+  setTimeout(() => { if (loader) loader.classList.add('hidden'); }, 2500);
+}
+
 // ----- NAVBAR SCROLL -----
 const navbar = document.getElementById('navbar');
 const backTop = document.getElementById('back-top');
@@ -13,16 +23,32 @@ window.addEventListener('scroll', () => {
 // ----- HAMBURGER MENU -----
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
+
+// Create overlay for mobile menu
+const mmOverlay = document.createElement('div');
+mmOverlay.className = 'mobile-menu-overlay';
+document.body.appendChild(mmOverlay);
+
+function openMobileMenu() {
+  hamburger.classList.add('open');
+  mobileMenu.classList.add('open');
+  mmOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  mmOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 if (hamburger && mobileMenu) {
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
+    mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
   });
+  mmOverlay.addEventListener('click', closeMobileMenu);
   mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-    });
+    a.addEventListener('click', closeMobileMenu);
   });
 }
 
