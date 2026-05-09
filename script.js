@@ -151,7 +151,7 @@ function wireInlineGallery(container) {
 }
 document.querySelectorAll('.inline-gallery').forEach(wireInlineGallery);
 
-// ----- CONTACT FORM -----
+// ----- CONTACT FORM — sends via mailto to alogrealestate7@gmail.com -----
 function initContactForm(formId) {
   const form = document.getElementById(formId);
   if (!form) return;
@@ -173,9 +173,22 @@ function initContactForm(formId) {
       el.addEventListener('input', () => { if (r.check(el.value)) grp.classList.remove('error'); }, { once: true });
     });
     if (valid) {
+      // Build mailto link with form data
+      const name     = (document.getElementById('f-name')?.value || '').trim();
+      const email    = (document.getElementById('f-email')?.value || '').trim();
+      const phone    = (document.getElementById('f-phone')?.value || '').trim();
+      const division = (document.getElementById('f-division')?.value || '').trim();
+      const enquiry  = (document.getElementById('f-enquiry')?.value || '').trim();
+      const message  = (document.getElementById('f-message')?.value || '').trim();
+      const subject  = encodeURIComponent(`ALOG Enquiry — ${division || 'General'} — ${name}`);
+      const body     = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nDivision: ${division}\nEnquiry Type: ${enquiry}\n\nMessage:\n${message}`
+      );
+      window.location.href = `mailto:alogrealestate7@gmail.com?subject=${subject}&body=${body}`;
+      // Show success
       this.reset();
       const s = document.getElementById('form-success');
-      if (s) { s.style.display = 'block'; setTimeout(() => s.style.display = 'none', 5000); }
+      if (s) { s.style.display = 'block'; setTimeout(() => s.style.display = 'none', 6000); }
     }
   });
 }
