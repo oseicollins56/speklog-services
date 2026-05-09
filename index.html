@@ -10,20 +10,89 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* ---- HOMEPAGE HERO ---- */
-#home { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: url('images/hero-aerial.jpg') center/cover no-repeat; background-attachment: scroll; }
-.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,60,80,.54) 0%, rgba(0,77,102,.38) 50%, rgba(0,60,80,.58) 100%); }
-.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 24px; max-width: 860px; }
-.hero-division-tag { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 700; letter-spacing: .18em; color: rgba(255,255,255,.65); margin-bottom: 24px; text-transform: uppercase; }
-.hero-division-tag::before, .hero-division-tag::after { content: ''; display: block; width: 40px; height: 1px; background: #a0b400; opacity: .8; }
-.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 6.5vw, 4.6rem); font-weight: 700; color: #fff; line-height: 1.12; margin-bottom: 18px; }
+#home {
+  position: relative;
+  width: 100%; height: 100vh; min-height: 620px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  /* NO margin/padding — fills viewport edge to edge */
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('images/hero-aerial.jpg') center 40%/cover no-repeat;
+  transform: scale(1); /* prevent any layout shift */
+}
+/* Dark overlay — strong enough to make ALL text clearly readable */
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    175deg,
+    rgba(0,40,60,.72) 0%,
+    rgba(0,55,75,.58) 45%,
+    rgba(0,40,60,.68) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 900px;
+  width: 100%;
+}
+.hero-division-tag {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: .74rem; font-weight: 700; letter-spacing: .2em;
+  color: rgba(255,255,255,.9); margin-bottom: 22px; text-transform: uppercase;
+}
+.hero-division-tag::before,
+.hero-division-tag::after {
+  content: ''; display: block; width: 48px; height: 1px;
+  background: #a0b400;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6.5vw, 5rem);
+  font-weight: 700; color: #fff; line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
 .hero-title span { color: #a0b400; }
-.hero-tagline { font-size: clamp(1rem, 2.2vw, 1.35rem); font-weight: 300; color: rgba(255,255,255,.8); margin-bottom: 16px; letter-spacing: .03em; font-style: italic; }
-.hero-desc { font-size: .93rem; color: rgba(255,255,255,.62); line-height: 1.85; max-width: 640px; margin: 0 auto 38px; }
+.hero-tagline {
+  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+  font-weight: 400; color: #fff;
+  margin-bottom: 14px; letter-spacing: .02em; font-style: italic;
+  text-shadow: 0 1px 12px rgba(0,0,0,.5);
+}
+.hero-desc {
+  font-size: .97rem; color: rgba(255,255,255,.85);
+  line-height: 1.85; max-width: 640px;
+  margin: 0 auto 40px;
+  text-shadow: 0 1px 8px rgba(0,0,0,.4);
+}
 .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; color: rgba(255,255,255,.4); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; animation: bounce 2.2s ease infinite; }
-.hero-scroll span { width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent); }
-@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(9px)} }
+.hero-scroll {
+  position: absolute; bottom: 30px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  z-index: 2; color: rgba(255,255,255,.55);
+  font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+  animation: bounce 2.2s ease infinite;
+}
+.hero-scroll span {
+  width: 1px; height: 36px;
+  background: linear-gradient(to bottom, rgba(255,255,255,.55), transparent);
+}
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(8px); }
+}
+@media (max-width: 600px) {
+  .hero-title { font-size: 2.4rem; }
+  .hero-tagline { font-size: 1.05rem; }
+  .hero-desc { font-size: .88rem; }
+  .hero-btns { flex-direction: column; align-items: center; }
+}
 </style>
 </head>
 <body>
