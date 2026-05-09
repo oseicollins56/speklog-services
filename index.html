@@ -9,10 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-/* ---- HOMEPAGE HERO (kept exactly as original) ---- */
+/* ---- HOMEPAGE HERO ---- */
 #home { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: url('images/construction/bec74d98-1c4f-4a1e-abd3-65ce83dec674.JPG') center/cover no-repeat; }
-.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(10,26,58,.88) 0%, rgba(13,35,71,.75) 50%, rgba(10,26,58,.9) 100%); }
+.hero-bg { position: absolute; inset: 0; background: url('images/hero-aerial.jpg') center/cover no-repeat; }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(10,26,58,.55) 0%, rgba(13,35,71,.42) 50%, rgba(10,26,58,.60) 100%); }
 .hero-content { position: relative; z-index: 2; text-align: center; padding: 120px 24px 80px; max-width: 860px; }
 .hero-division-tag { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 700; letter-spacing: .18em; color: rgba(255,255,255,.6); margin-bottom: 28px; text-transform: uppercase; }
 .hero-division-tag::before, .hero-division-tag::after { content: ''; display: block; width: 40px; height: 1px; background: #89C541; opacity: .7; }
@@ -24,6 +24,9 @@
 .hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; color: rgba(255,255,255,.4); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; animation: bounce 2s ease infinite; }
 .hero-scroll span { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,.4), transparent); }
 @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+/* Big hero logo */
+.hero-logo { height: 220px; width: auto; margin: 0 auto 24px; display: block; filter: drop-shadow(0 4px 24px rgba(0,0,0,.5)); }
+@media(max-width:600px){ .hero-logo { height: 140px; } }
 </style>
 </head>
 <body>
@@ -72,6 +75,7 @@
 <section id="home">
   <div class="hero-bg"></div>
   <div class="hero-content">
+    <img src="images/alog-logo.png" alt="ALOG" class="hero-logo"/>
     <div class="hero-division-tag">CONSTRUCTION · INTERIOR DESIGN · REAL ESTATE</div>
     <h1 class="hero-title"><span>Build.</span> Design. Own.</h1>
     <p class="hero-tagline">Home of Quality and Unique Works</p>
