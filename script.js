@@ -115,12 +115,15 @@ function initGalleryFilter() {
     return Array.from(items).filter(i => i.style.display !== 'none');
   }
   function rewire() {
-    const vis = getVisible();
+    // Only wire lightbox for image items (not video items)
+    const vis = getVisible().filter(i => !i.classList.contains('video-item'));
     const srcs = vis.map(i => i.dataset.src);
     const caps = vis.map(i => i.dataset.caption || '');
     vis.forEach((item, i) => {
       item.onclick = () => openLB(srcs, i, caps);
     });
+    // Video items: remove any click handler
+    getVisible().filter(i => i.classList.contains('video-item')).forEach(v => { v.onclick = null; });
   }
   function filter(cat) {
     items.forEach(item => {

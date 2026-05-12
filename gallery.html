@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery — ALOG Services</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Video items in masonry grid */
+    .video-item { cursor:default !important; }
+    .video-item .masonry-overlay { pointer-events:none; }
+    .gal-video-wrap { position:relative; width:100%; aspect-ratio:9/16; background:#000; overflow:hidden; border-radius:var(--radius,10px); }
+    .gal-video-wrap video { width:100%;height:100%;object-fit:cover;display:block; }
+    .gal-video-badge { position:absolute;top:10px;left:10px;background:rgba(0,113,94,.85);backdrop-filter:blur(4px);color:#fff;font-size:.68rem;font-weight:700;padding:4px 10px;border-radius:20px;display:flex;align-items:center;gap:5px;letter-spacing:.04em; }
+    .video-item .masonry-overlay { background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 60%); }
+  </style>
 
 
 
@@ -64,6 +73,7 @@
         <button class="gal-btn" data-cat="construction">Construction</button>
         <button class="gal-btn" data-cat="interior">Interior Design</button>
         <button class="gal-btn" data-cat="realestate">Real Estate</button>
+        <button class="gal-btn" data-cat="video">🎬 Videos</button>
       </div>
 
       <!-- Masonry Grid -->
@@ -322,6 +332,37 @@
              data-caption="Property showcase">
           <img src="images/realestate/IMG_8593.JPG" alt="Property showcase" loading="lazy"/>
           <div class="masonry-overlay"><span>Real Estate</span></div>
+        </div>
+
+        <!-- VIDEOS (3 real estate project videos) -->
+        <div class="masonry-item video-item" data-cat="video">
+          <div class="gal-video-wrap">
+            <video autoplay loop muted playsinline preload="auto">
+              <source src="videos/project-showcase-1.mp4" type="video/mp4">
+            </video>
+            <div class="gal-video-badge"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg> Real Estate</div>
+          </div>
+          <div class="masonry-overlay"><span>Property Walkthrough</span></div>
+        </div>
+
+        <div class="masonry-item video-item" data-cat="video">
+          <div class="gal-video-wrap">
+            <video autoplay loop muted playsinline preload="auto">
+              <source src="videos/project-showcase-2.mp4" type="video/mp4">
+            </video>
+            <div class="gal-video-badge"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg> Real Estate</div>
+          </div>
+          <div class="masonry-overlay"><span>Exterior &amp; Compound</span></div>
+        </div>
+
+        <div class="masonry-item video-item" data-cat="video">
+          <div class="gal-video-wrap">
+            <video autoplay loop muted playsinline preload="auto">
+              <source src="videos/project-showcase-3.mp4" type="video/mp4">
+            </video>
+            <div class="gal-video-badge"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><polygon points="5 3 19 12 5 21 5 3"/></svg> Real Estate</div>
+          </div>
+          <div class="masonry-overlay"><span>Interior Preview</span></div>
         </div>
 
       </div><!-- /masonry-grid -->
