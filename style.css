@@ -130,9 +130,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    PAGE HERO (inner pages)
    ============================================================ */
-.page-hero { position: relative; padding: 140px 24px 80px; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 420px; background: var(--navy) center/cover no-repeat; }
+.page-hero { position: relative; padding: 160px 24px 90px; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 460px; background: var(--navy) center/cover no-repeat; background-size: cover !important; background-position: center !important; }
 .page-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: .85; }
-.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,60,80,.45) 0%, rgba(0,77,102,.35) 100%); }
+.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,30,50,.72) 0%, rgba(0,50,70,.58) 100%); }
 .page-hero-content { position: relative; z-index: 2; text-align: center; max-width: 760px; }
 .breadcrumb { display: flex; align-items: center; gap: 8px; justify-content: center; margin-bottom: 20px; font-size: .78rem; color: rgba(255,255,255,.45); }
 .breadcrumb a { color: rgba(255,255,255,.45); transition: var(--trans); }
@@ -155,9 +155,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    DIVISION CARDS (homepage)
    ============================================================ */
 .division-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.division-card { position: relative; border-radius: var(--radius); overflow: hidden; height: 440px; cursor: pointer; transition: var(--trans); }
+.division-card { position: relative; border-radius: var(--radius); overflow: hidden; height: 440px; cursor: pointer; transition: var(--trans); background: var(--navy); }
 .division-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.division-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.division-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .5s ease; }
 .division-card:hover img { transform: scale(1.06); }
 .division-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,60,80,.94) 0%, rgba(0,60,80,.25) 55%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; }
 .division-tag-label { font-size: .69rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--lime); margin-bottom: 8px; }
@@ -187,8 +187,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    FEATURED WORK (homepage)
    ============================================================ */
 .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.featured-item { position: relative; border-radius: var(--radius); overflow: hidden; height: 260px; cursor: pointer; }
-.featured-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.featured-item { position: relative; border-radius: var(--radius); overflow: hidden; height: 260px; cursor: pointer; background: var(--navy); }
+.featured-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .5s ease; }
 .featured-item:hover img { transform: scale(1.07); }
 .featured-caption { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,60,80,.9) 0%, transparent 55%); display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; opacity: 0; transition: opacity .35s ease; }
 .featured-item:hover .featured-caption { opacity: 1; }
@@ -202,7 +202,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .about-grid.reverse .about-img { order: 2; }
 .about-grid.reverse .about-text { order: 1; }
 .about-img { position: relative; border-radius: var(--radius); overflow: hidden; }
-.about-img img { width: 100%; height: 480px; object-fit: cover; }
+.about-img img { width: 100%; height: 480px; object-fit: cover; object-position: center; display: block; }
 .about-badge { position: absolute; bottom: 24px; left: 24px; background: var(--teal); color: var(--white); padding: 14px 20px; border-radius: 8px; font-size: .8rem; font-weight: 700; line-height: 1.4; box-shadow: var(--shadow); }
 .about-badge strong { display: block; font-size: 1.5rem; font-family: 'Playfair Display', serif; }
 .about-text .section-subtitle { max-width: 100%; }
@@ -256,8 +256,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .property-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .property-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: var(--trans); }
 .property-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.property-img { position: relative; height: 220px; overflow: hidden; }
-.property-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.property-img { position: relative; height: 220px; overflow: hidden; background: var(--navy); }
+.property-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .4s ease; }
 .property-card:hover .property-img img { transform: scale(1.05); }
 .property-badge { position: absolute; top: 14px; left: 14px; padding: 5px 12px; border-radius: 20px; font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
 .badge-sale { background: var(--teal); color: var(--white); }
@@ -533,8 +533,14 @@ footer { background: var(--navy); padding: 64px 0 0; }
 .gal-btn.active { background: var(--teal); border-color: var(--teal); color: var(--white); }
 
 /* Masonry grid */
-.masonry-grid { columns: 4; gap: 16px; }
-.masonry-grid .masonry-item { break-inside: avoid; margin-bottom: 16px; }
+.masonry-grid { columns: 4; column-gap: 16px; }
+.masonry-grid .masonry-item { break-inside: avoid; margin-bottom: 16px; display: block; }
+/* Images inside masonry must fill width and be fully visible */
+.masonry-grid .masonry-item img { width: 100%; height: auto; display: block; object-fit: cover; }
+/* Video items in masonry: portrait cards */
+.masonry-grid .video-item { cursor: default; }
+.masonry-grid .video-item .gal-video-wrap { display: block; width: 100%; }
+.masonry-grid .video-item video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 @media (max-width: 1024px) {
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
