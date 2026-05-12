@@ -210,6 +210,67 @@
   </div>
 </section>
 
+<!-- CONSTRUCTION WORK VIDEOS -->
+<section style="padding:80px 0;background:var(--navy);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="section-tag">On The Ground</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--white);margin:12px 0 16px;">Our Work So Far</h2>
+      <p style="font-size:.95rem;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto;line-height:1.8;">Live footage from our active and completed sites — raw progress, real craftsmanship, and the ALOG standard in action.</p>
+    </div>
+    <div class="con-videos-grid">
+
+      <div class="con-video-card fade-in">
+        <div class="con-video-wrap"><video autoplay loop muted playsinline preload="auto"><source src="videos/construction-1.mp4" type="video/mp4"></video><div class="con-video-badge">Construction</div></div>
+        <div class="con-video-info"><h4>Foundation &amp; Groundworks</h4><p>Precision groundwork — laying the solid foundation every great build depends on.</p></div>
+      </div>
+
+      <div class="con-video-card fade-in fade-delay-1">
+        <div class="con-video-wrap"><video autoplay loop muted playsinline preload="auto"><source src="videos/construction-2.mp4" type="video/mp4"></video><div class="con-video-badge">Construction</div></div>
+        <div class="con-video-info"><h4>Structural Framework</h4><p>Steel and concrete rising — our structural teams work to exacting tolerances.</p></div>
+      </div>
+
+      <div class="con-video-card fade-in fade-delay-2">
+        <div class="con-video-wrap"><video autoplay loop muted playsinline preload="auto"><source src="videos/construction-3.mp4" type="video/mp4"></video><div class="con-video-badge">Construction</div></div>
+        <div class="con-video-info"><h4>Residential Build Progress</h4><p>A residential project taking shape — from bare slab to finished walls.</p></div>
+      </div>
+
+      <div class="con-video-card fade-in">
+        <div class="con-video-wrap"><video autoplay loop muted playsinline preload="auto"><source src="videos/construction-4.mp4" type="video/mp4"></video><div class="con-video-badge">Construction</div></div>
+        <div class="con-video-info"><h4>Block Work &amp; Masonry</h4><p>Every block laid true — quality masonry that forms the backbone of our builds.</p></div>
+      </div>
+
+      <div class="con-video-card fade-in fade-delay-1">
+        <div class="con-video-wrap"><video autoplay loop muted playsinline preload="auto"><source src="videos/construction-5.mp4" type="video/mp4"></video><div class="con-video-badge">Construction</div></div>
+        <div class="con-video-info"><h4>Finishing &amp; Plastering</h4><p>The final layers applied with care — smooth finishes ready for interior fit-out.</p></div>
+      </div>
+
+      <div class="con-video-card fade-in fade-delay-2">
+        <div class="con-video-wrap"><video autoplay loop muted playsinline preload="auto"><source src="videos/construction-6.mp4" type="video/mp4"></video><div class="con-video-badge">Construction</div></div>
+        <div class="con-video-info"><h4>Site Walkthrough</h4><p>A full site tour — see the scale, quality and progress of an ALOG project up close.</p></div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="contact.html" class="btn btn-lime" style="margin-right:12px;">Get a Quote</a>
+      <a href="gallery.html" class="btn btn-outline-white">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+<style>
+.con-videos-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.con-video-card { background:rgba(255,255,255,.06); border-radius:var(--radius); overflow:hidden; transition:var(--trans); border:1px solid rgba(255,255,255,.08); }
+.con-video-card:hover { transform:translateY(-5px); background:rgba(255,255,255,.1); }
+.con-video-wrap { position:relative; aspect-ratio:9/16; background:#000; overflow:hidden; }
+.con-video-wrap video { width:100%;height:100%;object-fit:cover;display:block; }
+.con-video-badge { position:absolute;top:10px;left:10px;background:var(--teal);color:#fff;font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.05em;text-transform:uppercase; }
+.con-video-info { padding:18px; }
+.con-video-info h4 { font-size:.9rem;font-weight:700;color:var(--white);margin-bottom:6px;line-height:1.4; }
+.con-video-info p { font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.65;margin:0; }
+@media(max-width:900px){ .con-videos-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:520px){ .con-videos-grid { grid-template-columns:1fr; } }
+</style>
+
 <!-- CTA -->
 <div class="cta-section">
   <div class="container">
