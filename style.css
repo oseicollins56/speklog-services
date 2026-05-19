@@ -237,10 +237,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    QUALITY BAR (construction page)
    ============================================================ */
-.quality-bar { background: var(--navy-2, #004d66); border-radius: var(--radius); padding: 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; text-align: center; }
-.quality-item svg { width: 40px; height: 40px; stroke: var(--lime); fill: none; stroke-width: 1.5; margin: 0 auto 12px; display: block; }
-.quality-item h4 { font-size: .95rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-.quality-item p { font-size: .82rem; color: rgba(255,255,255,.44); line-height: 1.6; }
+.quality-bar { background: #f5f8fa; border-radius: var(--radius); padding: 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; text-align: center; border: 1px solid rgba(0,60,80,.08); }
+.quality-item svg { width: 40px; height: 40px; stroke: var(--teal); fill: none; stroke-width: 1.5; margin: 0 auto 12px; display: block; }
+.quality-item h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.quality-item p { font-size: .82rem; color: var(--gray-2); line-height: 1.6; }
 
 /* ============================================================
    PROCESS STEPS (interior page)
