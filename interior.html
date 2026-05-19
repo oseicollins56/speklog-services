@@ -8,6 +8,117 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* ---- INTERIOR VIDEO HERO ---- */
+.interior-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.interior-hero .video-slot {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .9s ease;
+  pointer-events: none;
+}
+.interior-hero .video-slot.active { opacity: 1; }
+.interior-hero .video-slot video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Dark overlay over video */
+.interior-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    175deg,
+    rgba(0,20,35,.78) 0%,
+    rgba(0,40,60,.60) 50%,
+    rgba(0,20,35,.75) 100%
+  );
+  z-index: 2;
+}
+/* Hero text */
+.interior-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 760px;
+  padding: 0 24px;
+}
+.interior-hero-content .breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 20px;
+}
+.interior-hero-content .breadcrumb a { color: rgba(255,255,255,.55); transition: color .2s; }
+.interior-hero-content .breadcrumb a:hover { color: var(--lime, #89C541); }
+.interior-hero-content .breadcrumb .sep { opacity: .4; }
+.interior-hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+.interior-hero-content p {
+  font-size: .97rem;
+  color: rgba(255,255,255,.78);
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto 32px;
+}
+.interior-hero-content .hero-btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+/* Video indicator dots */
+.video-dots {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+}
+.video-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.35);
+  cursor: pointer;
+  transition: background .3s, transform .3s;
+}
+.video-dot.active {
+  background: var(--lime, #89C541);
+  transform: scale(1.3);
+}
+@media (max-width: 600px) {
+  .interior-hero-content h1 { font-size: 2rem; }
+  .interior-hero-content p { font-size: .88rem; }
+  .interior-hero-content .hero-btns { flex-direction: column; align-items: center; }
+}
+</style>
 </head>
 <body>
 
@@ -33,15 +144,103 @@
   <a href="index.html">Home</a><a href="construction.html">Construction</a><a href="interior.html">Interior Design</a><a href="realestate.html">Real Estate</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact Us</a>
 </div>
 
-<!-- PAGE HERO -->
-<div class="page-hero" style="background-image:url('images/interior/IMG_1021.JPG'); background-size:cover; background-position:center;">
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span>Interior Design</span></div>
+<!-- VIDEO HERO -->
+<div class="interior-hero" id="interiorHero">
+
+  <!-- Video slot 1 -->
+  <div class="video-slot active" id="vslot-0">
+    <video autoplay muted playsinline preload="auto" id="vid-0">
+      <source src="videos/interior/hero-1.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Video slot 2 -->
+  <div class="video-slot" id="vslot-1">
+    <video muted playsinline preload="auto" id="vid-1">
+      <source src="videos/interior/hero-2.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Video slot 3 -->
+  <div class="video-slot" id="vslot-2">
+    <video muted playsinline preload="auto" id="vid-2">
+      <source src="videos/interior/hero-3.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Overlay -->
+  <div class="interior-hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="interior-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">/</span><span>Interior Design</span>
+    </div>
     <h1>ALOG Interiors</h1>
     <p>Thoughtful, liveable interiors for homes, offices and hospitality spaces — designed around the way you actually live and work.</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+      <a href="gallery.html" class="btn btn-outline-white">View Portfolio</a>
+    </div>
   </div>
+
+  <!-- Progress dots -->
+  <div class="video-dots" id="videoDots">
+    <div class="video-dot active" data-idx="0"></div>
+    <div class="video-dot" data-idx="1"></div>
+    <div class="video-dot" data-idx="2"></div>
+  </div>
+
 </div>
+
+<script>
+(function(){
+  const total   = 3;
+  const slots   = Array.from({length: total}, (_,i) => document.getElementById('vslot-'+i));
+  const videos  = Array.from({length: total}, (_,i) => document.getElementById('vid-'+i));
+  const dots    = Array.from(document.querySelectorAll('#videoDots .video-dot'));
+  let current   = 0;
+
+  function goTo(next) {
+    const prev = current;
+    current = next % total;
+
+    // Activate next slot (fades in via CSS transition)
+    slots[current].classList.add('active');
+    dots[current].classList.add('active');
+
+    // Start playing the incoming video
+    videos[current].currentTime = 0;
+    videos[current].play().catch(() => {});
+
+    // After fade completes, hide previous slot and pause it
+    setTimeout(() => {
+      slots[prev].classList.remove('active');
+      dots[prev].classList.remove('active');
+      videos[prev].pause();
+      videos[prev].currentTime = 0;
+    }, 950);
+  }
+
+  // When each video ends, advance to next
+  videos.forEach((v, i) => {
+    v.addEventListener('ended', () => goTo(i + 1));
+    // Fallback: if video stalls/errors, advance after 12s
+    v.addEventListener('error', () => setTimeout(() => goTo(i + 1), 500));
+  });
+
+  // Dot click — jump to any video
+  dots.forEach(d => {
+    d.addEventListener('click', () => {
+      const idx = parseInt(d.dataset.idx);
+      if (idx !== current) goTo(idx);
+    });
+  });
+
+  // Kick off — ensure first video plays (needed for some mobile browsers)
+  videos[0].play().catch(() => {});
+})();
+</script>
 
 <!-- STUDIO INTRO -->
 <section class="section section-light">
