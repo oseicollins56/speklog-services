@@ -1,4 +1,4 @@
-# ALOG.SERVICES — GitHub Setup & Deployment Guide
+# SPEKLOG.SERVICES — GitHub Setup & Deployment Guide
 
 ---
 
@@ -12,8 +12,8 @@ Go to **https://github.com** → Sign Up → Complete the registration.
 
 1. Log into GitHub and click the **+** icon (top right) → **New repository**
 2. Fill in:
-   - **Repository name:** `alog-services` (or `alog.services`)
-   - **Description:** ALOG Construction, Interior Design & Real Estate website
+   - **Repository name:** `speklog-services` (or `speklog.services`)
+   - **Description:** SPEKLOG Construction, Interior Design & Real Estate website
    - **Visibility:** Public *(required for free GitHub Pages hosting)*
    - Leave "Add a README file" **unchecked** — you already have your files
 3. Click **Create repository**
@@ -47,7 +47,7 @@ In Terminal, navigate to your project folder and run these commands **one at a t
 
 ```bash
 # 1. Go to your project folder
-cd ~/Documents/Claude/Projects/ALOG.SERVICES
+cd ~/Documents/Claude/Projects/SPEKLOG.SERVICES
 
 # 2. Initialise a Git repository
 git init
@@ -56,14 +56,14 @@ git init
 git add .
 
 # 4. Create the first commit
-git commit -m "Initial commit: ALOG website — Construction, Interior Design, Real Estate"
+git commit -m "Initial commit: SPEKLOG website — Construction, Interior Design, Real Estate"
 
 # 5. Rename the branch to 'main'
 git branch -M main
 
 # 6. Link your local folder to GitHub
 #    (replace YOUR-USERNAME with your actual GitHub username)
-git remote add origin https://github.com/YOUR-USERNAME/alog-services.git
+git remote add origin https://github.com/YOUR-USERNAME/speklog-services.git
 
 # 7. Push everything to GitHub
 git push -u origin main
@@ -94,7 +94,7 @@ GitHub no longer accepts passwords over HTTPS. You need a token:
 5. Wait 1–2 minutes, then your site will be live at:
 
 ```
-https://YOUR-USERNAME.github.io/alog-services/
+https://YOUR-USERNAME.github.io/speklog-services/
 ```
 
 ---
@@ -104,7 +104,7 @@ https://YOUR-USERNAME.github.io/alog-services/
 Every time you make changes to the files, push them with:
 
 ```bash
-cd ~/Documents/Claude/Projects/ALOG.SERVICES
+cd ~/Documents/Claude/Projects/SPEKLOG.SERVICES
 git add .
 git commit -m "Update: describe what you changed"
 git push
@@ -114,11 +114,11 @@ GitHub Pages will automatically redeploy within a minute or two.
 
 ---
 
-## Adding the ALOG Logo
+## Adding the SPEKLOG Logo
 
 Save your logo file as:
 ```
-images/alog-logo.png
+images/speklog-logo.png
 ```
 inside the project folder, then push. The navbar and footer will automatically display it.
 
@@ -132,16 +132,16 @@ To use the specific aerial photo you shared:
 
 1. Locate the aerial drone photo on your Mac
 2. Rename it to **`hero-aerial.jpg`**
-3. Copy it into: `~/Documents/Claude/Projects/ALOG.SERVICES/images/construction/`
+3. Copy it into: `~/Documents/Claude/Projects/SPEKLOG.SERVICES/images/construction/`
 4. It will replace the current placeholder automatically — then push to GitHub using the update commands above
 
 ---
 
-## Optional — Custom Domain (e.g. alog.services)
+## Optional — Custom Domain (e.g. speklog.services)
 
-If you own the domain **alog.services**:
+If you own the domain **speklog.services**:
 
-1. In GitHub → Settings → Pages → **Custom domain** → enter `alog.services` → Save
+1. In GitHub → Settings → Pages → **Custom domain** → enter `speklog.services` → Save
 2. At your domain registrar, create these DNS records:
 
 | Type  | Name | Value                   |
@@ -156,4 +156,4 @@ If you own the domain **alog.services**:
 
 ---
 
-*Guide prepared for ALOG Construction & Real Estate Ltd — May 2026*
+*Guide prepared for SPEKLOG Construction & Real Estate Ltd — May 2026*

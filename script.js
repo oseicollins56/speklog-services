@@ -1,5 +1,5 @@
 /* ============================================================
-   script.js — ALOG Shared JavaScript
+   script.js — SPEKLOG Shared JavaScript
    ============================================================ */
 
 // ----- PAGE LOADER -----
@@ -183,7 +183,7 @@ function initContactForm(formId) {
       const division = (document.getElementById('f-division')?.value || '').trim();
       const enquiry  = (document.getElementById('f-enquiry')?.value || '').trim();
       const message  = (document.getElementById('f-message')?.value || '').trim();
-      const subject  = encodeURIComponent(`ALOG Enquiry — ${division || 'General'} — ${name}`);
+      const subject  = encodeURIComponent(`SPEKLOG Enquiry — ${division || 'General'} — ${name}`);
       const body     = encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nDivision: ${division}\nEnquiry Type: ${enquiry}\n\nMessage:\n${message}`
       );

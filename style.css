@@ -1,5 +1,5 @@
 /* ============================================================
-   style.css — ALOG Shared Styles
+   style.css — SPEKLOG Shared Styles
    ============================================================ */
 
 /* GOOGLE FONTS — loaded here so style.css is the single import for all pages */
@@ -8,7 +8,7 @@
 /* RESET */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* VARIABLES — colours pulled from ALOG logo: deep teal #003c50, olive-lime #a0b400 */
+/* VARIABLES — colours pulled from SPEKLOG logo: deep teal #003c50, olive-lime #a0b400 */
 :root {
   --navy:      #003c50;   /* logo text colour — deep teal */
   --navy-2:    #004d66;   /* slightly lighter teal for hover/secondary dark */
@@ -171,7 +171,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .division-card:hover .division-link svg { transform: translateX(4px); }
 
 /* ============================================================
-   FEATURES GRID (Why Choose ALOG)
+   FEATURES GRID (Why Choose SPEKLOG)
    ============================================================ */
 .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .feature-card { padding: 28px 22px; border-radius: var(--radius); background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); transition: var(--trans); }
