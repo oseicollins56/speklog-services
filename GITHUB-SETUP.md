@@ -116,11 +116,24 @@ GitHub Pages will automatically redeploy within a minute or two.
 
 ## Adding the ALOG Logo
 
-When you have the logo file ready:
+Save your logo file as:
+```
+images/alog-logo.png
+```
+inside the project folder, then push. The navbar and footer will automatically display it.
 
-1. Save it as `images/logo/alog-logo.png` inside the project folder
-2. Run the update commands above to push it to GitHub
-3. The site will automatically display it in the navbar and footer
+---
+
+## Replacing the Construction Hero Image
+
+The construction page hero is currently set to `images/construction/hero-aerial.jpg`.
+
+To use the specific aerial photo you shared:
+
+1. Locate the aerial drone photo on your Mac
+2. Rename it to **`hero-aerial.jpg`**
+3. Copy it into: `~/Documents/Claude/Projects/ALOG.SERVICES/images/construction/`
+4. It will replace the current placeholder automatically — then push to GitHub using the update commands above
 
 ---
 
