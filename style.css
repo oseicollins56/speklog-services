@@ -347,36 +347,36 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ============================================================
    FOOTER
    ============================================================ */
-footer { background: var(--navy); padding: 64px 0 0; }
+footer { background: #fff; border-top: 1px solid rgba(0,0,0,.08); padding: 64px 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; }
 .footer-brand-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
 .footer-brand-logo img { height: 42px; width: auto; object-fit: contain; }
-.footer-brand-logo-fallback { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--white); }
-.footer-brand > p { font-size: .84rem; color: rgba(255,255,255,.38); line-height: 1.7; max-width: 260px; margin-bottom: 20px; }
+.footer-brand-logo-fallback { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); }
+.footer-brand > p { font-size: .84rem; color: var(--gray-2); line-height: 1.7; max-width: 260px; margin-bottom: 20px; }
 /* footer social icons — shared by both class names */
 .footer-social, .footer-socials { display: flex; gap: 10px; margin-top: 16px; }
 .footer-social a, .footer-socials a {
   width: 36px; height: 36px; border-radius: 8px;
-  background: rgba(255,255,255,.07);
+  background: rgba(0,0,0,.06);
   display: flex; align-items: center; justify-content: center;
-  transition: var(--trans); color: rgba(255,255,255,.55);
+  transition: var(--trans); color: var(--navy);
   flex-shrink: 0;
 }
 .footer-social a:hover, .footer-socials a:hover { background: var(--teal); color: var(--white); }
 .footer-social a svg, .footer-socials a svg { width: 16px; height: 16px; fill: currentColor; stroke: none; }
-.social-link { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; transition: var(--trans); color: rgba(255,255,255,.42); }
+.social-link { width: 36px; height: 36px; border-radius: 8px; background: rgba(0,0,0,.06); display: flex; align-items: center; justify-content: center; transition: var(--trans); color: var(--navy); }
 .social-link:hover { background: var(--teal); color: var(--white); }
 .social-link svg { width: 16px; height: 16px; fill: currentColor; }
-.footer-col h4 { font-size: .78rem; font-weight: 700; color: var(--white); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 18px; }
+.footer-col h4 { font-size: .78rem; font-weight: 700; color: var(--navy); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 18px; }
 .footer-col ul li { margin-bottom: 10px; }
-.footer-col ul a { font-size: .84rem; color: rgba(255,255,255,.38); transition: var(--trans); }
-.footer-col ul a:hover { color: var(--lime); }
+.footer-col ul a { font-size: .84rem; color: var(--gray-2); transition: var(--trans); }
+.footer-col ul a:hover { color: var(--teal); }
 .footer-contact-item { display: flex; gap: 10px; margin-bottom: 12px; align-items: flex-start; }
-.footer-contact-item svg { width: 15px; height: 15px; stroke: var(--lime); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
-.footer-contact-item span { font-size: .82rem; color: rgba(255,255,255,.38); line-height: 1.5; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,.07); padding: 20px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-.footer-bottom p { font-size: .77rem; color: rgba(255,255,255,.28); }
-.footer-bottom a { color: var(--lime); }
+.footer-contact-item svg { width: 15px; height: 15px; stroke: var(--teal); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 2px; }
+.footer-contact-item span { font-size: .82rem; color: var(--gray-2); line-height: 1.5; }
+.footer-bottom { border-top: 1px solid rgba(0,0,0,.08); padding: 20px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: .77rem; color: var(--gray-2); }
+.footer-bottom a { color: var(--teal); }
 
 /* ============================================================
    BACK TO TOP + WHATSAPP
