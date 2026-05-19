@@ -1,2 +1,16 @@
-real-estate-promo.mp4
-real estate video.MP4
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node (if ever added)
+node_modules/
+npm-debug.log
+
+# Editor folders
+.vscode/
+.idea/
