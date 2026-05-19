@@ -14,3 +14,6 @@ npm-debug.log
 # Editor folders
 .vscode/
 .idea/
+"real estate video.MP4"
+*.MP4
+*.MOV
