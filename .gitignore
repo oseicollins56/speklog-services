@@ -21,3 +21,10 @@ npm-debug.log
 
 # Allow compressed web videos in /videos/
 !videos/*.mp4
+
+# Original/uncompressed source images (compressed versions are committed instead)
+images/interior/IMG_4337.JPG
+images/interior/IMG_4823.JPG
+images/interior/IMG_5465.JPG
+images/interior/IMG_1417.PNG
+images/interior/IMG_5805.PNG
