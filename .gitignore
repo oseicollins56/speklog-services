@@ -14,6 +14,10 @@ npm-debug.log
 # Editor folders
 .vscode/
 .idea/
+# Exclude raw/large source video files only
 "real estate video.MP4"
-*.MP4
+"construction videos/"
 *.MOV
+
+# Allow compressed web videos in /videos/
+!videos/*.mp4
