@@ -10,7 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="images/hero-house.webp" type="image/webp" fetchpriority="high"/>
+  <link rel="stylesheet" href="style.css">
 <style>
 /* ---- HOMEPAGE HERO ---- */
 #home {
@@ -99,6 +100,8 @@
   .hero-btns { flex-direction: column; align-items: center; }
 }
 </style>
+
+  <style>.hero-bg { background-image:url("images/hero-house.jpg"); background-image:image-set(url("images/hero-house.webp") type("image/webp"), url("images/hero-house.jpg") type("image/jpeg")); }</style>
 </head>
 <body>
 
@@ -188,7 +191,7 @@
     </div>
     <div class="division-grid">
       <a href="construction.html" class="division-card fade-in">
-        <img src="images/realestate/389c1461-3951-4c76-bc22-13df8a86b093.JPG" alt="SPEKLOG Construction" loading="lazy">
+        <picture><source srcset="images/realestate/389c1461-3951-4c76-bc22-13df8a86b093.webp" type="image/webp"><img src="images/realestate/389c1461-3951-4c76-bc22-13df8a86b093.JPG" alt="SPEKLOG Construction" loading="lazy"></picture>
         <div class="division-overlay">
           <div class="division-tag-label">Construction</div>
           <h3>SPEKLOG Construction</h3>
@@ -197,7 +200,7 @@
         </div>
       </a>
       <a href="interior.html" class="division-card fade-in fade-delay-1">
-        <img src="images/interior/IMG_1021.JPG" alt="SPEKLOG Interiors" loading="lazy">
+        <picture><source srcset="images/interior/IMG_1021.webp" type="image/webp"><img src="images/interior/IMG_1021.JPG" alt="SPEKLOG Interiors" loading="lazy"></picture>
         <div class="division-overlay">
           <div class="division-tag-label">Interior Design</div>
           <h3>SPEKLOG Interiors</h3>
@@ -206,7 +209,7 @@
         </div>
       </a>
       <a href="realestate.html" class="division-card fade-in fade-delay-2">
-        <img src="images/construction/IMG_5444.JPG" alt="SPEKLOG Realty" loading="lazy">
+        <picture><source srcset="images/construction/IMG_5444.webp" type="image/webp"><img src="images/construction/IMG_5444.JPG" alt="SPEKLOG Realty" loading="lazy"></picture>
         <div class="division-overlay">
           <div class="division-tag-label">Real Estate</div>
           <h3>SPEKLOG Realty</h3>
@@ -269,27 +272,27 @@
     </div>
     <div class="featured-grid">
       <div class="featured-item fade-in">
-        <img src="images/interior/IMG_0876.JPG" alt="Interior Project" loading="lazy">
+        <picture><source srcset="images/interior/IMG_0876.webp" type="image/webp"><img src="images/interior/IMG_0876.JPG" alt="Interior Project" loading="lazy"></picture>
         <div class="featured-caption"><h4>Modern Minimalist Interior</h4><span>Interior Design · Completed 2025</span></div>
       </div>
       <div class="featured-item fade-in fade-delay-1">
-        <img src="images/realestate/IMG_5266.JPG" alt="Real Estate" loading="lazy">
+        <picture><source srcset="images/realestate/IMG_5266.webp" type="image/webp"><img src="images/realestate/IMG_5266.JPG" alt="Real Estate" loading="lazy"></picture>
         <div class="featured-caption"><h4>Executive 4-Bedroom Villa</h4><span>Real Estate · East Legon, Accra</span></div>
       </div>
       <div class="featured-item fade-in fade-delay-2">
-        <img src="images/construction/IMG_2153.JPG" alt="Construction" loading="lazy">
+        <picture><source srcset="images/construction/IMG_2153.webp" type="image/webp"><img src="images/construction/IMG_2153.JPG" alt="Construction" loading="lazy"></picture>
         <div class="featured-caption"><h4>Residential Complex Build</h4><span>Construction · Completed 2024 · 12 units</span></div>
       </div>
       <div class="featured-item fade-in">
-        <img src="images/interior/IMG_4086.JPG" alt="Interior Design" loading="lazy">
+        <picture><source srcset="images/interior/IMG_4086.webp" type="image/webp"><img src="images/interior/IMG_4086.JPG" alt="Interior Design" loading="lazy"></picture>
         <div class="featured-caption"><h4>Chef's Kitchen Renovation</h4><span>Interior Design · East Legon</span></div>
       </div>
       <div class="featured-item fade-in fade-delay-1">
-        <img src="images/construction/bec74d98-1c4f-4a1e-abd3-65ce83dec674.JPG" alt="Construction" loading="lazy">
+        <picture><source srcset="images/construction/bec74d98-1c4f-4a1e-abd3-65ce83dec674.webp" type="image/webp"><img src="images/construction/bec74d98-1c4f-4a1e-abd3-65ce83dec674.JPG" alt="Construction" loading="lazy"></picture>
         <div class="featured-caption"><h4>Commercial Office Build</h4><span>Construction · Cantonments, Accra</span></div>
       </div>
       <div class="featured-item fade-in fade-delay-2">
-        <img src="images/realestate/IMG_8593.JPG" alt="Real Estate" loading="lazy">
+        <picture><source srcset="images/realestate/IMG_8593.webp" type="image/webp"><img src="images/realestate/IMG_8593.JPG" alt="Real Estate" loading="lazy"></picture>
         <div class="featured-caption"><h4>Luxury 5-Bedroom Residence</h4><span>Real Estate · Labone, Accra</span></div>
       </div>
     </div>
