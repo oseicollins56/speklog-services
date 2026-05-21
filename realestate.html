@@ -88,7 +88,7 @@
       </div>
     </div>
     <div class="video-wrap fade-in fade-delay-1">
-      <video loop muted playsinline preload="none">
+      <video loop muted playsinline preload="metadata">
         <source src="videos/real-estate-web.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -108,7 +108,7 @@
 
       <div class="work-video-card fade-in">
         <div class="work-video-wrap">
-          <video loop muted playsinline preload="none">
+          <video loop muted playsinline preload="metadata">
             <source src="videos/project-showcase-1.mp4" type="video/mp4">
           </video>
           <div class="work-video-badge">Project 1</div>
@@ -122,7 +122,7 @@
 
       <div class="work-video-card fade-in fade-delay-1">
         <div class="work-video-wrap">
-          <video loop muted playsinline preload="none">
+          <video loop muted playsinline preload="metadata">
             <source src="videos/project-showcase-2.mp4" type="video/mp4">
           </video>
           <div class="work-video-badge">Project 2</div>
@@ -136,7 +136,7 @@
 
       <div class="work-video-card fade-in fade-delay-2">
         <div class="work-video-wrap">
-          <video loop muted playsinline preload="none">
+          <video loop muted playsinline preload="metadata">
             <source src="videos/project-showcase-3.mp4" type="video/mp4">
           </video>
           <div class="work-video-badge">Project 3</div>
@@ -203,7 +203,7 @@
       if (e.isIntersecting) { e.target.play().catch(function(){}); }
       else { e.target.pause(); }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.25, rootMargin: '300px 0px' });
   vids.forEach(function(v){ v.removeAttribute('autoplay'); obs.observe(v); });
 })();
 </script>
