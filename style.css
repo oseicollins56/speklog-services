@@ -354,13 +354,16 @@ footer { background: #fff; border-top: 1px solid rgba(0,0,0,.08); padding: 64px 
 .footer-brand-logo img { height: 80px; width: auto; object-fit: contain; }
 .footer-brand-logo-fallback { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); }
 .footer-brand > p { font-size: .84rem; color: var(--gray-2); line-height: 1.7; max-width: 260px; margin-bottom: 20px; }
+.footer-group-name { font-family: 'Playfair Display', serif; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gray-2); margin: 0 0 6px !important; }
 .footer-subsidiaries { display: flex; align-items: baseline; gap: 0; margin-bottom: 20px; }
-.footer-subsidiary-alog { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; letter-spacing: .06em; color: var(--navy); text-transform: uppercase; transition: var(--trans); }
-.footer-subsidiary-alog:hover { color: var(--teal); }
-.footer-subsidiary-dot { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--teal); margin: 0 1px; line-height: 1; }
-.footer-subsidiary-link { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); transition: var(--trans); }
-.footer-subsidiary-link:hover { color: var(--navy); }
-.footer-subsidiary-divider { color: var(--gray-2); font-size: .75rem; margin: 0 6px; }
+.footer-sub-alog, .footer-sub-speklog, .footer-sub-spektar { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; transition: var(--trans); }
+.footer-sub-alog { color: var(--navy); }
+.footer-sub-alog:hover { color: var(--teal); }
+.footer-sub-speklog { color: var(--teal); }
+.footer-sub-speklog:hover { color: var(--navy); }
+.footer-sub-spektar { color: var(--navy); }
+.footer-sub-spektar:hover { color: var(--teal); }
+.footer-sub-dot { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--teal); line-height: 1; }
 /* footer social icons — shared by both class names */
 .footer-social, .footer-socials { display: flex; gap: 10px; margin-top: 16px; }
 .footer-social a, .footer-socials a {
