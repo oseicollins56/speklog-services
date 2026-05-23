@@ -280,33 +280,40 @@
    MOBILE HERO
    ============================================= */
 @media (max-width: 768px) {
-  /* Section: let height grow with stacked panels */
+  /* Section: push content below fixed navbar (72px), auto-grow for stacked panels */
   #home {
     height: auto;
     min-height: 100svh;
     overflow: visible;
     background: #0a1628;
+    padding-top: 72px;   /* clear the fixed navbar */
   }
 
-  /* Pill: pull out of absolute flow, sit above panels */
+  /* Pill: sits in the dark header strip just below the navbar */
   .hero-group-bar {
     position: relative;
     top: auto; left: auto;
     transform: none;
     align-self: center;
-    margin: 12px auto 0;
-    padding: 8px 18px;
+    display: flex;
+    margin: 14px auto 14px;
+    padding: 9px 20px;
     gap: 10px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.20);
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10;
   }
   .hero-group-tag { display: none; }
-  .hero-group-name { font-size: .72rem; }
+  .hero-group-name { font-size: .74rem; }
+  .hero-group-bar img { height: 22px; }
 
   /* Panels: stack full-width, taller so content breathes */
   .hero-panels {
     flex-direction: column;
     height: auto;
+    width: 100%;
   }
   .hero-panel {
     flex: none !important;
@@ -339,6 +346,7 @@
 
 /* ---- Very small phones (≤ 480px) ---- */
 @media (max-width: 480px) {
+  #home { padding-top: 64px; }  /* navbar shrinks to 64px on small phones */
   .hero-panel { height: 270px; min-height: 260px; }
   .hero-panel-brand { font-size: 2rem; }
   .hero-panel-desc { font-size: .76rem; }
