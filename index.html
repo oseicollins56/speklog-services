@@ -3,113 +3,306 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPEKLOG | Home of Quality and Unique Works</title>
-<meta name="description" content="SPEKLOG | Ghana's trusted name in construction, interior design and real estate. Build. Design. Own.">
+<title>ALOG Group of Companies | Build. Design. Own.</title>
+<meta name="description" content="ALOG Group of Companies — Ghana's trusted name in construction (SPEKLOG), interior design (SPEKTAR), and real estate (ALOG). Build. Design. Own.">
 <link rel="icon" type="image/png" href="images/speklog-logo.png">
 <link rel="apple-touch-icon" href="images/speklog-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="images/hero-house.webp" type="image/webp" fetchpriority="high"/>
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <style>
-/* ---- HOMEPAGE HERO ---- */
+/* =============================================
+   SPLIT HERO
+   ============================================= */
 #home {
   position: relative;
-  width: 100%; height: 100vh; min-height: 620px;
-  display: flex; align-items: center; justify-content: center;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  /* NO margin/padding, fills viewport edge to edge */
 }
-.hero-bg {
-  position: absolute; inset: 0;
-  background: url('images/hero-house.jpg') center center/cover no-repeat;
-  background-size: cover;
-  background-position: center center;
-  transform: scale(1); /* prevent any layout shift */
-}
-/* Dark overlay, strong enough to make ALL text clearly readable */
-.hero-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    175deg,
-    rgba(0,40,60,.28) 0%,
-    rgba(0,55,75,.18) 45%,
-    rgba(0,40,60,.24) 100%
-  );
-}
-.hero-content {
-  position: relative; z-index: 2;
-  text-align: center;
-  padding: 0 24px;
-  max-width: 900px;
-  width: 100%;
-}
-.hero-division-tag {
-  display: inline-flex; align-items: center; gap: 14px;
-  font-size: .74rem; font-weight: 700; letter-spacing: .2em;
-  color: rgba(255,255,255,.9); margin-bottom: 22px; text-transform: uppercase;
-}
-.hero-division-tag::before,
-.hero-division-tag::after {
-  content: ''; display: block; width: 48px; height: 1px;
-  background: #a0b400;
-}
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 6.5vw, 5rem);
-  font-weight: 700; color: #fff; line-height: 1.1;
-  margin-bottom: 20px;
-  text-shadow: 0 2px 20px rgba(0,0,0,.4);
-}
-.hero-title span { color: #a0b400; }
-.hero-tagline {
-  font-size: clamp(1.1rem, 2.4vw, 1.45rem);
-  font-weight: 400; color: #fff;
-  margin-bottom: 14px; letter-spacing: .02em; font-style: italic;
-  text-shadow: 0 1px 12px rgba(0,0,0,.5);
-}
-.hero-desc {
-  font-size: .97rem; color: rgba(255,255,255,.85);
-  line-height: 1.85; max-width: 640px;
-  margin: 0 auto 40px;
-  text-shadow: 0 1px 8px rgba(0,0,0,.4);
-}
-.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.hero-scroll {
-  position: absolute; bottom: 30px; left: 50%;
+
+/* Group masthead pill */
+.hero-group-bar {
+  position: absolute;
+  top: 82px;
+  left: 50%;
   transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  z-index: 2; color: rgba(255,255,255,.55);
-  font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
-  animation: bounce 2.2s ease infinite;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.13);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.22);
+  padding: 10px 26px 10px 18px;
+  border-radius: 60px;
+  white-space: nowrap;
+}
+.hero-group-bar img {
+  height: 26px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: .9;
+}
+.hero-group-name {
+  font-family: 'Playfair Display', serif;
+  font-size: .78rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.hero-group-tag {
+  font-size: .62rem;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,0.65);
+  text-transform: uppercase;
+  padding-left: 14px;
+  border-left: 1px solid rgba(255,255,255,0.28);
+}
+
+/* Three panels */
+.hero-panels {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.hero-panel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.65s cubic-bezier(0.4,0,0.2,1);
+  text-decoration: none;
+}
+.hero-panel:hover { flex: 2.2; }
+
+.hero-panel-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s ease;
+}
+.hero-panel:hover .hero-panel-bg { transform: scale(1.06); }
+
+/* Per-brand overlays */
+.hero-panel-overlay {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.5s ease;
+}
+.panel-alog .hero-panel-overlay {
+  background: linear-gradient(170deg, rgba(0,25,55,0.55) 0%, rgba(0,25,55,0.75) 100%);
+}
+.panel-speklog .hero-panel-overlay {
+  background: linear-gradient(170deg, rgba(0,60,55,0.5) 0%, rgba(0,60,55,0.78) 100%);
+}
+.panel-spektar .hero-panel-overlay {
+  background: linear-gradient(170deg, rgba(55,40,0,0.5) 0%, rgba(55,40,0,0.78) 100%);
+}
+
+/* Vertical rule between panels */
+.hero-panel:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 1px; height: 100%;
+  background: rgba(255,255,255,0.18);
+  z-index: 3;
+}
+
+/* Panel content */
+.hero-panel-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 44px 36px 56px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.hero-panel-label {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 6px;
+}
+.hero-panel-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  letter-spacing: .02em;
+}
+/* Per-brand accent on brand name */
+.panel-alog    .hero-panel-brand { color: #9ec8ff; }
+.panel-speklog .hero-panel-brand { color: #7effd4; }
+.panel-spektar .hero-panel-brand { color: #f5d870; }
+
+.hero-panel-sub {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+
+.hero-panel-desc {
+  font-size: .86rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  max-width: 300px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease 0.08s, transform 0.4s ease 0.08s;
+}
+.hero-panel:hover .hero-panel-desc { opacity: 1; transform: translateY(0); }
+
+.hero-panel-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1.5px solid rgba(255,255,255,0.45);
+  padding-bottom: 3px;
+  width: fit-content;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.38s ease 0.14s, transform 0.38s ease 0.14s, border-color 0.2s;
+}
+.hero-panel:hover .hero-panel-cta { opacity: 1; transform: translateY(0); }
+.hero-panel-cta:hover { border-color: #fff; }
+
+/* Panel number badge top-right */
+.hero-panel-num {
+  position: absolute;
+  top: 140px; right: 22px;
+  font-family: 'Playfair Display', serif;
+  font-size: 6rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.hero-panel:hover .hero-panel-num { opacity: 0; }
+
+/* Scroll hint */
+.hero-scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.5);
+  font-size: .66rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  animation: bounceY 2.4s ease infinite;
+  pointer-events: none;
 }
 .hero-scroll span {
-  width: 1px; height: 36px;
-  background: linear-gradient(to bottom, rgba(255,255,255,.55), transparent);
+  width: 1px; height: 34px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
 }
-@keyframes bounce {
+@keyframes bounceY {
   0%,100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(8px); }
+  50%      { transform: translateX(-50%) translateY(9px); }
 }
-@media (max-width: 600px) {
-  .hero-title { font-size: 2.4rem; }
-  .hero-tagline { font-size: 1.05rem; }
-  .hero-desc { font-size: .88rem; }
-  .hero-btns { flex-direction: column; align-items: center; }
+
+/* =============================================
+   BRAND INTRO STRIP  (below hero)
+   ============================================= */
+.brand-intro-strip {
+  background: var(--navy, #001432);
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+}
+.brand-intro-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 32px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+  transition: background 0.3s;
+  position: relative;
+}
+.brand-intro-item:last-child { border-right: none; }
+.brand-intro-item:hover { background: rgba(255,255,255,0.05); }
+.brand-intro-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot-alog    { background: #9ec8ff; }
+.dot-speklog { background: #7effd4; }
+.dot-spektar { background: #f5d870; }
+.brand-intro-text strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: .95rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .04em;
+}
+.brand-intro-text span {
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* =============================================
+   MOBILE HERO
+   ============================================= */
+@media (max-width: 768px) {
+  .hero-panels { flex-direction: column; }
+  .hero-panel  { flex: none !important; height: 34vh; min-height: 200px; }
+  .hero-panel:not(:last-child)::after { width: 100%; height: 1px; top: auto; bottom: 0; right: 0; }
+  .hero-group-bar { top: 68px; padding: 7px 16px; gap: 8px; }
+  .hero-group-tag { display: none; }
+  .hero-group-name { font-size: .68rem; }
+  .hero-panel-content { padding: 16px 20px 24px; }
+  .hero-panel-brand { font-size: 1.9rem; }
+  .hero-panel-desc { opacity: 1; transform: none; font-size: .78rem; }
+  .hero-panel-cta  { opacity: 1; transform: none; }
+  .hero-panel-num  { display: none; }
+  .hero-scroll     { display: none; }
+  .brand-intro-strip { flex-direction: column; }
+  .brand-intro-item  { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 18px 24px; }
 }
 </style>
-
-  <style>.hero-bg { background-image:url("images/hero-house.jpg"); background-image:image-set(url("images/hero-house.webp") type("image/webp"), url("images/hero-house.jpg") type("image/jpeg")); }</style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
 <!-- PAGE LOADER -->
 <div id="page-loader" class="page-loader">
   <div class="loader-inner">
-    <img src="images/speklog-logo.png" alt="SPEKLOG" class="loader-logo"/>
+    <img src="images/speklog-logo.png" alt="ALOG Group" class="loader-logo"/>
     <div class="loader-bar"><div class="loader-progress"></div></div>
   </div>
 </div>
@@ -118,17 +311,17 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="images/speklog-logo.png" alt="SPEKLOG" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="images/speklog-logo.png" alt="ALOG Group" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div style="display:none;flex-direction:column;line-height:1;">
-        <span class="nav-logo-fallback">SPEKLOG</span>
-        <span class="nav-logo-sub">Construction · Real Estate</span>
+        <span class="nav-logo-fallback">ALOG</span>
+        <span class="nav-logo-sub">Group of Companies</span>
       </div>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="construction.html">Construction</a></li>
-      <li><a href="interior.html">Interior Design</a></li>
-      <li><a href="realestate.html">Real Estate</a></li>
+      <li><a href="construction.html">SPEKLOG</a></li>
+      <li><a href="interior.html">SPEKTAR</a></li>
+      <li><a href="realestate.html">ALOG Realty</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
     </ul>
@@ -137,30 +330,99 @@
 </nav>
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html">Home</a>
-  <a href="construction.html">Construction</a>
-  <a href="interior.html">Interior Design</a>
-  <a href="realestate.html">Real Estate</a>
+  <a href="construction.html">SPEKLOG — Construction</a>
+  <a href="interior.html">SPEKTAR — Interior Design</a>
+  <a href="realestate.html">ALOG — Real Estate</a>
   <a href="gallery.html">Gallery</a>
   <a href="contact.html">Contact Us</a>
 </div>
 
-<!-- ============================================================
-     HERO, unchanged
-     ============================================================ -->
+<!-- =============================================
+     HERO — THREE SPLIT PANELS
+     ============================================= -->
 <section id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-division-tag">CONSTRUCTION · INTERIOR DESIGN · REAL ESTATE</div>
-    <h1 class="hero-title"><span>Build.</span> Design. Own.</h1>
-    <p class="hero-tagline">Home of Quality and Unique Works</p>
-    <p class="hero-desc">SPEKLOG delivers end-to-end property solutions across Ghana. Three specialised divisions, one uncompromising standard of quality.</p>
-    <div class="hero-btns">
-      <a href="realestate.html" class="btn btn-primary">View Properties</a>
-      <a href="contact.html" class="btn btn-outline-white">Schedule Consultation</a>
-    </div>
+
+  <!-- Group masthead pill -->
+  <div class="hero-group-bar">
+    <img src="images/speklog-logo.png" alt="ALOG">
+    <span class="hero-group-name">ALOG GROUP OF COMPANIES</span>
+    <span class="hero-group-tag">CONSTRUCTION · INTERIOR DESIGN · REAL ESTATE</span>
   </div>
+
+  <!-- Panels -->
+  <div class="hero-panels">
+
+    <!-- 1 · ALOG — Real Estate -->
+    <a href="realestate.html" class="hero-panel panel-alog">
+      <div class="hero-panel-bg" style="background-image:url('images/realestate/389c1461-3951-4c76-bc22-13df8a86b093.JPG')"></div>
+      <div class="hero-panel-overlay"></div>
+      <div class="hero-panel-num">01</div>
+      <div class="hero-panel-content">
+        <span class="hero-panel-label">Real Estate</span>
+        <span class="hero-panel-brand">ALOG</span>
+        <span class="hero-panel-sub">Property &amp; Realty</span>
+        <p class="hero-panel-desc">Curated residential and commercial properties to buy or rent across Accra and beyond. Transparent pricing, trusted agents.</p>
+        <span class="hero-panel-cta">View Properties →</span>
+      </div>
+    </a>
+
+    <!-- 2 · SPEKLOG — Construction -->
+    <a href="construction.html" class="hero-panel panel-speklog">
+      <div class="hero-panel-bg" style="background-image:url('images/construction/IMG_5444.JPG')"></div>
+      <div class="hero-panel-overlay"></div>
+      <div class="hero-panel-num">02</div>
+      <div class="hero-panel-content">
+        <span class="hero-panel-label">Construction</span>
+        <span class="hero-panel-brand">SPEKLOG</span>
+        <span class="hero-panel-sub">Build &amp; Develop</span>
+        <p class="hero-panel-desc">New builds, renovations, extensions and commercial projects delivered on time and to the highest standards in Ghana.</p>
+        <span class="hero-panel-cta">Start Building →</span>
+      </div>
+    </a>
+
+    <!-- 3 · SPEKTAR — Interior Design -->
+    <a href="interior.html" class="hero-panel panel-spektar">
+      <div class="hero-panel-bg" style="background-image:url('images/interior/IMG_0876.JPG')"></div>
+      <div class="hero-panel-overlay"></div>
+      <div class="hero-panel-num">03</div>
+      <div class="hero-panel-content">
+        <span class="hero-panel-label">Interior Design</span>
+        <span class="hero-panel-brand">SPEKTAR</span>
+        <span class="hero-panel-sub">Design &amp; Transform</span>
+        <p class="hero-panel-desc">Award-winning residential and commercial interior design. We craft spaces that reflect your lifestyle and vision.</p>
+        <span class="hero-panel-cta">Design Your Space →</span>
+      </div>
+    </a>
+
+  </div>
+
   <div class="hero-scroll"><span></span>Scroll</div>
 </section>
+
+<!-- BRAND INTRO STRIP -->
+<div class="brand-intro-strip">
+  <a href="realestate.html" class="brand-intro-item">
+    <div class="brand-intro-dot dot-alog"></div>
+    <div class="brand-intro-text">
+      <strong>ALOG</strong>
+      <span>Real Estate Division</span>
+    </div>
+  </a>
+  <a href="construction.html" class="brand-intro-item">
+    <div class="brand-intro-dot dot-speklog"></div>
+    <div class="brand-intro-text">
+      <strong>SPEKLOG</strong>
+      <span>Construction Division</span>
+    </div>
+  </a>
+  <a href="interior.html" class="brand-intro-item">
+    <div class="brand-intro-dot dot-spektar"></div>
+    <div class="brand-intro-text">
+      <strong>SPEKTAR</strong>
+      <span>Interior Design Division</span>
+    </div>
+  </a>
+</div>
 
 <!-- STATS BAR -->
 <div class="stats-bar">
@@ -180,59 +442,75 @@
   </div>
 </div>
 
-<!-- ============================================================
-     THREE DIVISIONS
-     ============================================================ -->
+<!-- =============================================
+     THREE BRANDS
+     ============================================= -->
 <section class="section section-alt">
   <div class="container">
     <div class="section-header center fade-in">
-      <span class="section-tag">Our Three Divisions</span>
-      <h2 class="section-title">One Brand. <span>Three Expert Services.</span></h2>
-      <p class="section-subtitle" style="margin:14px auto 0;">Whether you're designing a dream home, constructing a commercial build, or searching for your next property, SPEKLOG brings the right team for the job.</p>
+      <span class="section-tag">ALOG Group of Companies</span>
+      <h2 class="section-title">Three Expert Brands. <span>One Group.</span></h2>
+      <p class="section-subtitle" style="margin:14px auto 0;">Whether you're designing a dream home, constructing a commercial build, or searching for your next property — ALOG Group has the right specialist for the job.</p>
     </div>
     <div class="division-grid">
+
+      <!-- SPEKLOG Construction -->
       <a href="construction.html" class="division-card fade-in">
-        <picture><source srcset="images/realestate/389c1461-3951-4c76-bc22-13df8a86b093.webp" type="image/webp"><img src="images/realestate/389c1461-3951-4c76-bc22-13df8a86b093.JPG" alt="SPEKLOG Construction" loading="lazy"></picture>
+        <picture>
+          <source srcset="images/construction/IMG_5444.webp" type="image/webp">
+          <img src="images/construction/IMG_5444.JPG" alt="SPEKLOG Construction" loading="lazy">
+        </picture>
         <div class="division-overlay">
           <div class="division-tag-label">Construction</div>
-          <h3>SPEKLOG Construction</h3>
-          <p>Turnkey construction services, new builds, renovations, extensions and commercial projects. Delivered on time and to the highest standards.</p>
-          <span class="division-link">Explore Construction <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <h3>SPEKLOG</h3>
+          <p>Turnkey construction services — new builds, renovations, extensions and commercial projects. Delivered on time and to the highest standards.</p>
+          <span class="division-link">Explore SPEKLOG <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
+
+      <!-- SPEKTAR Interior Design -->
       <a href="interior.html" class="division-card fade-in fade-delay-1">
-        <picture><source srcset="images/interior/IMG_1021.webp" type="image/webp"><img src="images/interior/IMG_1021.JPG" alt="SPEKLOG Interiors" loading="lazy"></picture>
+        <picture>
+          <source srcset="images/interior/IMG_1021.webp" type="image/webp">
+          <img src="images/interior/IMG_1021.JPG" alt="SPEKTAR Interior Design" loading="lazy">
+        </picture>
         <div class="division-overlay">
           <div class="division-tag-label">Interior Design</div>
-          <h3>SPEKLOG Interiors</h3>
-          <p>Award-winning residential and commercial interior design. We craft spaces that reflect your lifestyle, from cosy homes to statement hospitality venues.</p>
-          <span class="division-link">Explore Interiors <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          <h3>SPEKTAR</h3>
+          <p>Residential and commercial interior design excellence. We craft spaces that reflect your lifestyle, from cosy homes to statement hospitality venues.</p>
+          <span class="division-link">Explore SPEKTAR <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
+
+      <!-- ALOG Real Estate -->
       <a href="realestate.html" class="division-card fade-in fade-delay-2">
-        <picture><source srcset="images/construction/IMG_5444.webp" type="image/webp"><img src="images/construction/IMG_5444.JPG" alt="SPEKLOG Realty" loading="lazy"></picture>
+        <picture>
+          <source srcset="images/realestate/IMG_5266.webp" type="image/webp">
+          <img src="images/realestate/IMG_5266.JPG" alt="ALOG Real Estate" loading="lazy">
+        </picture>
         <div class="division-overlay">
           <div class="division-tag-label">Real Estate</div>
-          <h3>SPEKLOG Realty</h3>
+          <h3>ALOG</h3>
           <p>Curated residential and commercial properties to buy or rent across Accra and beyond. Transparent pricing and trusted agents.</p>
           <span class="division-link">Browse Properties <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
+
     </div>
   </div>
 </section>
 
 <div class="section-divider"></div>
 
-<!-- ============================================================
-     WHY CHOOSE SPEKLOG
-     ============================================================ -->
+<!-- =============================================
+     WHY CHOOSE ALOG GROUP
+     ============================================= -->
 <section class="section section-light">
   <div class="container">
     <div class="section-header center fade-in">
-      <span class="section-tag">Why Choose SPEKLOG</span>
+      <span class="section-tag">Why Choose ALOG Group</span>
       <h2 class="section-title">End-to-End <span>Property Expertise</span></h2>
-      <p class="section-subtitle" style="margin:14px auto 0;text-align:center;">One point of contact. Three specialist teams. Zero handoff friction.</p>
+      <p class="section-subtitle" style="margin:14px auto 0;text-align:center;">One group. Three specialist teams. Zero handoff friction.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card on-light fade-in">
@@ -261,40 +539,40 @@
 
 <div class="section-divider"></div>
 
-<!-- ============================================================
+<!-- =============================================
      FEATURED WORK
-     ============================================================ -->
+     ============================================= -->
 <section class="section section-light">
   <div class="container">
     <div class="section-header center fade-in">
       <span class="section-tag">Featured Work</span>
-      <h2 class="section-title">Recent Projects <span>Across Our Divisions</span></h2>
-      <p class="section-subtitle" style="margin:14px auto 0;">A snapshot of the standards we set for every client, hover to reveal the project details.</p>
+      <h2 class="section-title">Recent Projects <span>Across Our Brands</span></h2>
+      <p class="section-subtitle" style="margin:14px auto 0;">A snapshot of the standards we set for every client across ALOG, SPEKLOG and SPEKTAR.</p>
     </div>
     <div class="featured-grid">
       <div class="featured-item fade-in">
-        <picture><source srcset="images/interior/IMG_0876.webp" type="image/webp"><img src="images/interior/IMG_0876.JPG" alt="Interior Project" loading="lazy"></picture>
-        <div class="featured-caption"><h4>Modern Minimalist Interior</h4><span>Interior Design · Completed 2025</span></div>
+        <picture><source srcset="images/interior/IMG_0876.webp" type="image/webp"><img src="images/interior/IMG_0876.JPG" alt="SPEKTAR Interior" loading="lazy"></picture>
+        <div class="featured-caption"><h4>Modern Minimalist Interior</h4><span>SPEKTAR · Interior Design · 2025</span></div>
       </div>
       <div class="featured-item fade-in fade-delay-1">
-        <picture><source srcset="images/realestate/IMG_5266.webp" type="image/webp"><img src="images/realestate/IMG_5266.JPG" alt="Real Estate" loading="lazy"></picture>
-        <div class="featured-caption"><h4>Executive 4-Bedroom Villa</h4><span>Real Estate · East Legon, Accra</span></div>
+        <picture><source srcset="images/realestate/IMG_5266.webp" type="image/webp"><img src="images/realestate/IMG_5266.JPG" alt="ALOG Real Estate" loading="lazy"></picture>
+        <div class="featured-caption"><h4>Executive 4-Bedroom Villa</h4><span>ALOG · Real Estate · East Legon, Accra</span></div>
       </div>
       <div class="featured-item fade-in fade-delay-2">
-        <picture><source srcset="images/construction/IMG_2153.webp" type="image/webp"><img src="images/construction/IMG_2153.JPG" alt="Construction" loading="lazy"></picture>
-        <div class="featured-caption"><h4>Residential Complex Build</h4><span>Construction · Completed 2024 · 12 units</span></div>
+        <picture><source srcset="images/construction/IMG_2153.webp" type="image/webp"><img src="images/construction/IMG_2153.JPG" alt="SPEKLOG Construction" loading="lazy"></picture>
+        <div class="featured-caption"><h4>Residential Complex Build</h4><span>SPEKLOG · Construction · Completed 2024</span></div>
       </div>
       <div class="featured-item fade-in">
-        <picture><source srcset="images/interior/IMG_4086.webp" type="image/webp"><img src="images/interior/IMG_4086.JPG" alt="Interior Design" loading="lazy"></picture>
-        <div class="featured-caption"><h4>Chef's Kitchen Renovation</h4><span>Interior Design · East Legon</span></div>
+        <picture><source srcset="images/interior/IMG_4086.webp" type="image/webp"><img src="images/interior/IMG_4086.JPG" alt="SPEKTAR Kitchen" loading="lazy"></picture>
+        <div class="featured-caption"><h4>Chef's Kitchen Renovation</h4><span>SPEKTAR · Interior Design · East Legon</span></div>
       </div>
       <div class="featured-item fade-in fade-delay-1">
-        <picture><source srcset="images/construction/bec74d98-1c4f-4a1e-abd3-65ce83dec674.webp" type="image/webp"><img src="images/construction/bec74d98-1c4f-4a1e-abd3-65ce83dec674.JPG" alt="Construction" loading="lazy"></picture>
-        <div class="featured-caption"><h4>Commercial Office Build</h4><span>Construction · Cantonments, Accra</span></div>
+        <picture><source srcset="images/construction/bec74d98-1c4f-4a1e-abd3-65ce83dec674.webp" type="image/webp"><img src="images/construction/bec74d98-1c4f-4a1e-abd3-65ce83dec674.JPG" alt="SPEKLOG Office" loading="lazy"></picture>
+        <div class="featured-caption"><h4>Commercial Office Build</h4><span>SPEKLOG · Construction · Cantonments, Accra</span></div>
       </div>
       <div class="featured-item fade-in fade-delay-2">
-        <picture><source srcset="images/realestate/IMG_8593.webp" type="image/webp"><img src="images/realestate/IMG_8593.JPG" alt="Real Estate" loading="lazy"></picture>
-        <div class="featured-caption"><h4>Luxury 5-Bedroom Residence</h4><span>Real Estate · Labone, Accra</span></div>
+        <picture><source srcset="images/realestate/IMG_8593.webp" type="image/webp"><img src="images/realestate/IMG_8593.JPG" alt="ALOG Residence" loading="lazy"></picture>
+        <div class="featured-caption"><h4>Luxury 5-Bedroom Residence</h4><span>ALOG · Real Estate · Labone, Accra</span></div>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;" class="fade-in">
@@ -302,12 +580,10 @@
     </div>
   </div>
 </section>
-  </div>
-</div>
 
-<!-- ============================================================
+<!-- =============================================
      QUICK CONTACT
-     ============================================================ -->
+     ============================================= -->
 <section class="section section-alt">
   <div class="container">
     <div class="contact-grid">
@@ -353,12 +629,12 @@
               <input type="tel" id="f-phone" placeholder="0XX XXX XXXX">
             </div>
             <div class="form-group" id="fg-division">
-              <label>Division of Interest *</label>
+              <label>Brand of Interest *</label>
               <select id="f-division">
-                <option value="">Select a division</option>
-                <option>Construction</option>
-                <option>Interior Design</option>
-                <option>Real Estate</option>
+                <option value="">Select a brand</option>
+                <option>SPEKLOG — Construction</option>
+                <option>SPEKTAR — Interior Design</option>
+                <option>ALOG — Real Estate</option>
                 <option>All / Not sure</option>
               </select>
               <div class="form-error">Please choose one.</div>
@@ -380,15 +656,17 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-            <div class="footer-brand">
+      <div class="footer-brand">
         <div class="footer-brand-logo">
           <img src="images/speklog-logo.png" alt="ALOG" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <span class="footer-brand-logo-fallback" style="display:none">ALOG</span>
         </div>
         <p class="footer-group-name">ALOG GROUP OF COMPANIES</p>
-          <div class="footer-subsidiaries">
-            <a href="realestate.html" class="footer-sub-alog">ALOG</a> <a href="construction.html" class="footer-sub-speklog">SPEKLOG</a> <a href="interior.html" class="footer-sub-spektar">SPEKTAR</a>
-          </div>
+        <div class="footer-subsidiaries">
+          <a href="realestate.html" class="footer-sub-alog">ALOG</a>
+          <a href="construction.html" class="footer-sub-speklog">SPEKLOG</a>
+          <a href="interior.html" class="footer-sub-spektar">SPEKTAR</a>
+        </div>
         <p>Home of Quality and Unique Works, unifying Construction, Interior Design, and Real Estate under one trusted name in Ghana.</p>
         <div class="footer-social">
           <a class="social-link" href="https://www.tiktok.com/@mr.alog4" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
@@ -400,11 +678,11 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Our Divisions</h4>
+        <h4>Our Brands</h4>
         <ul>
-          <li><a href="construction.html">Construction</a></li>
-          <li><a href="interior.html">Interior Design</a></li>
-          <li><a href="realestate.html">Real Estate</a></li>
+          <li><a href="construction.html">SPEKLOG — Construction</a></li>
+          <li><a href="interior.html">SPEKTAR — Interior Design</a></li>
+          <li><a href="realestate.html">ALOG — Real Estate</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -433,7 +711,7 @@
 
 <button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg></button>
 
-<a href="https://wa.me/233593924981?text=Hi%20SPEKLOG%2C%20I'd%20like%20to%20enquire%20about%20your%20services." class="whatsapp-btn" target="_blank" rel="noopener">
+<a href="https://wa.me/233593924981?text=Hi%20ALOG%20Group%2C%20I'd%20like%20to%20enquire%20about%20your%20services." class="whatsapp-btn" target="_blank" rel="noopener">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span>Chat with us</span>
 </a>
