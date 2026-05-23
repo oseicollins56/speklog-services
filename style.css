@@ -354,11 +354,13 @@ footer { background: #fff; border-top: 1px solid rgba(0,0,0,.08); padding: 64px 
 .footer-brand-logo img { height: 80px; width: auto; object-fit: contain; }
 .footer-brand-logo-fallback { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); }
 .footer-brand > p { font-size: .84rem; color: var(--gray-2); line-height: 1.7; max-width: 260px; margin-bottom: 20px; }
-.footer-group-name { font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: var(--navy); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px !important; }
-.footer-subsidiaries { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-.footer-subsidiary-link { font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); border-bottom: 1px solid var(--teal); padding-bottom: 1px; transition: var(--trans); }
-.footer-subsidiary-link:hover { color: var(--navy); border-color: var(--navy); }
-.footer-subsidiary-divider { color: var(--gray-2); font-size: .8rem; }
+.footer-subsidiaries { display: flex; align-items: baseline; gap: 0; margin-bottom: 20px; }
+.footer-subsidiary-alog { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; letter-spacing: .06em; color: var(--navy); text-transform: uppercase; transition: var(--trans); }
+.footer-subsidiary-alog:hover { color: var(--teal); }
+.footer-subsidiary-dot { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--teal); margin: 0 1px; line-height: 1; }
+.footer-subsidiary-link { font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); transition: var(--trans); }
+.footer-subsidiary-link:hover { color: var(--navy); }
+.footer-subsidiary-divider { color: var(--gray-2); font-size: .75rem; margin: 0 6px; }
 /* footer social icons — shared by both class names */
 .footer-social, .footer-socials { display: flex; gap: 10px; margin-top: 16px; }
 .footer-social a, .footer-socials a {
