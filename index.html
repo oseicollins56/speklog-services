@@ -280,20 +280,68 @@
    MOBILE HERO
    ============================================= */
 @media (max-width: 768px) {
-  .hero-panels { flex-direction: column; }
-  .hero-panel  { flex: none !important; height: 34vh; min-height: 200px; }
-  .hero-panel:not(:last-child)::after { width: 100%; height: 1px; top: auto; bottom: 0; right: 0; }
-  .hero-group-bar { top: 68px; padding: 7px 16px; gap: 8px; }
+  /* Section: let height grow with stacked panels */
+  #home {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+    background: #0a1628;
+  }
+
+  /* Pill: pull out of absolute flow, sit above panels */
+  .hero-group-bar {
+    position: relative;
+    top: auto; left: auto;
+    transform: none;
+    align-self: center;
+    margin: 12px auto 0;
+    padding: 8px 18px;
+    gap: 10px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.20);
+  }
   .hero-group-tag { display: none; }
-  .hero-group-name { font-size: .68rem; }
-  .hero-panel-content { padding: 16px 20px 24px; }
-  .hero-panel-brand { font-size: 1.9rem; }
-  .hero-panel-desc { opacity: 1; transform: none; font-size: .78rem; }
-  .hero-panel-cta  { opacity: 1; transform: none; }
-  .hero-panel-num  { display: none; }
-  .hero-scroll     { display: none; }
+  .hero-group-name { font-size: .72rem; }
+
+  /* Panels: stack full-width, taller so content breathes */
+  .hero-panels {
+    flex-direction: column;
+    height: auto;
+  }
+  .hero-panel {
+    flex: none !important;
+    height: 300px;
+    min-height: 280px;
+  }
+  .hero-panel:not(:last-child)::after {
+    width: 100%; height: 1px;
+    top: auto; bottom: 0; right: 0;
+  }
+
+  /* Content inside each panel */
+  .hero-panel-content { padding: 20px 20px 28px; }
+  .hero-panel-label   { font-size: .64rem; }
+  .hero-panel-brand   { font-size: 2.4rem; }
+  .hero-panel-sub     { font-size: .62rem; letter-spacing: .18em; }
+  .hero-panel-desc    { opacity: 1; transform: none; font-size: .8rem; margin-top: 8px; }
+  .hero-panel-cta     { opacity: 1; transform: none; margin-top: 12px; font-size: .78rem; }
+  .hero-panel-num     { display: none; }
+  .hero-scroll        { display: none; }
+
+  /* Brand strip below panels: stack vertically */
   .brand-intro-strip { flex-direction: column; }
-  .brand-intro-item  { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 18px 24px; }
+  .brand-intro-item  {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 18px 24px;
+  }
+}
+
+/* ---- Very small phones (≤ 480px) ---- */
+@media (max-width: 480px) {
+  .hero-panel { height: 270px; min-height: 260px; }
+  .hero-panel-brand { font-size: 2rem; }
+  .hero-panel-desc { font-size: .76rem; }
 }
 </style>
 </head>

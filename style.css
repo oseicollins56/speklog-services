@@ -771,3 +771,71 @@ video { max-width: 100%; }
   .section { padding: 48px 0; }
   .section-header { margin-bottom: 36px; }
 }
+
+/* ============================================================
+   MOBILE — GLOBAL OVERFLOW & SCROLL SAFETY
+   ============================================================ */
+html, body { overflow-x: hidden; }
+
+/* Prevent any child from punching past viewport width */
+* { box-sizing: border-box; }
+
+/* ---- MOBILE: up to 768px — additional fixes ---- */
+@media (max-width: 768px) {
+  /* Property grid: cards full-width and readable */
+  .property-grid { grid-template-columns: 1fr; gap: 20px; }
+  .property-card { width: 100%; }
+  .property-card img { height: 220px; }
+
+  /* Footer subsidiaries: wrap gracefully */
+  .footer-subsidiaries { flex-wrap: wrap; gap: 8px; }
+  .footer-sub-alog, .footer-sub-speklog, .footer-sub-spektar { font-size: .95rem; }
+
+  /* Footer columns: full-width stack */
+  .footer-col { width: 100%; }
+  .footer-links { columns: 2; }
+
+  /* Section headers: tighter on mobile */
+  .section-header { margin-bottom: 28px; }
+  .section-title { font-size: clamp(1.5rem, 5vw, 2rem) !important; }
+  .section-sub { font-size: .88rem; }
+
+  /* About section images: natural height */
+  .about-img img { height: auto !important; max-height: 280px; object-fit: cover; width: 100%; }
+
+  /* Page-hero on sub-pages: more padding on narrow screens */
+  .page-hero { padding: 100px 20px 52px; }
+
+  /* CTA strip full-width buttons */
+  .cta-btns .btn { width: 100%; max-width: 300px; justify-content: center; }
+
+  /* Services list: item padding */
+  .service-item { padding: 18px 16px; }
+
+  /* Timeline: single column, no borders */
+  .timeline-item { border-right: none !important; border-bottom: 1px solid var(--gray) !important; }
+  .timeline-item:last-child { border-bottom: none !important; }
+
+  /* Quality bar items: full width */
+  .quality-item { text-align: center; }
+}
+
+/* ---- SMALL PHONES: extra fixes ---- */
+@media (max-width: 480px) {
+  /* Footer links: single column */
+  .footer-links { columns: 1; }
+
+  /* Property card image height */
+  .property-card img { height: 200px; }
+
+  /* Stats: keep 3-up but shrink text */
+  .stat-num { font-size: 1.4rem; }
+  .stat-label { font-size: .68rem; }
+
+  /* Contact form: full-width select & inputs */
+  .form-select, .form-control { font-size: 16px; } /* prevent iOS zoom */
+
+  /* Nav logo on tiny screens */
+  .nav-logo-img { height: 40px; }
+  .nav-inner { height: 60px; }
+}
